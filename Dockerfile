@@ -13,3 +13,6 @@ RUN sudo apt-get install -y nodejs
 
 # install Turtle (Expo standalone build tool)
 RUN npm install -g --unsafe-perm turtle-cli
+
+# Expo CLI and Netlify CLI
+RUN npm install -g expo-cli netlify-cli
