@@ -2,7 +2,7 @@ FROM ubuntu:21.04
 
 LABEL description="Base image for building standalone Expo apps using Turtle CLI"
 LABEL author="Aamnah"
-LABEL version="0.1"
+LABEL version="0.2"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -15,8 +15,9 @@ RUN apt update -qq && apt-get install -y -qq \
     build-essential \
     openjdk-8-jdk-headless
 
-# Install Node with nvm
+# Setup Node with nvm
 ARG NODE_VERSION=14.17.0
+ENV NPM_CONFIG_USER=root
 ENV NVM_DIR=/root/.nvm
 ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 
